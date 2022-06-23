@@ -1,0 +1,28 @@
+#remove duplicates from linkedlist
+#example:
+# 1->1->2->3->4->4->4->5->6->6 becomes
+#1->2->3->4->5->6
+
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def removeDuplicatesFromLinkedList(linkedList):
+    # Write your code here.
+    #return None
+    firstnode = linkedList
+    previousnode = firstnode
+    while True:
+        nextnode = previousnode.next
+        if nextnode is not None:
+            if nextnode.value == previousnode.value:
+                previousnode.next = nextnode.next
+            else:
+                previousnode = nextnode
+        else:
+            break
+        removeDuplicatesFromLinkedList(nextnode)
+    return linkedList
