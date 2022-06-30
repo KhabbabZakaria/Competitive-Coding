@@ -6,7 +6,7 @@ class BST:
 
 
 tree = BST(10)
-tree.left = BST(4)
+tree.left = BST(4) 
 tree.left.left = BST(2)
 tree.left.left.left = BST(1)
 tree.left.right = BST(5)
